@@ -1,35 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css" />
-    <link rel="icon" href="images/logo.webp" type="image/webp" />
-    <title>Forside</title>
-</head>
-<body>
-    <nav class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/logo.webp" alt="logo">
-            </a>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Logo" />
+        </a>
+      </div>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">CATEGORY</a></li>
+          <li><a href="produktliste.html">PRODUCT-LIST</a></li>
+          <li><a href="produkt.html">PRODUCT</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Categories</a></li>
-            <li><a href="index.html">Brands</a></li>
-            <li><a href="index.html">Seasons</a></li>
-        </ul>
-    </nav>    
-    <h1>Categories</h1>
-    <div class="category_list_container">
-        <ul>
-            <li><a href="productli.html">Accessories</a></li>
-            <li><a href="productli.html">Apparel</a></li>
-            <li><a href="productli.html">Footwear</a></li>
-            <li><a href="productli.html">Free Items</a></li>
-            <li><a href="productli.html">Personal Care</a></li>
-            <li><a href="productli.html">Sporting Goods</a></li>
-        </ul>
-    </div>
-</body>
+      </nav>
+    </header>
+    <main>
+      <h1 class="h1Centered">CATEGORY</h1>
+      <div class="box_container" id="categoryContainer">
+        <!-- Categories will be inserted here dynamically -->
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+    <!-- Link to the external JavaScript file -->
+  </body>
 </html>
