@@ -1,20 +1,29 @@
-// const
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const category = urlParams.get("category");
 const productList = document.querySelector(".productContainer");
 
-fetch(`https://kea-alt-del.dk/t7/api/products?category=${category}&limit=100`)
-  .then((response) => response.json())
-  .then((data) => showList(data));
+if (productList) {
+  let fetchUrl;
 
-//   funktion
+  if (category === "all" || !category) {
+    // Hent ALLE produkter
+    fetchUrl = `https://kea-alt-del.dk/t7/api/products?limit=100`;
+  } else {
+    // Hent produkter fra en specifik kategori
+    fetchUrl = `https://kea-alt-del.dk/t7/api/products?category=${category}&limit=200`;
+  }
+
+  fetch(fetchUrl)
+    .then((response) => response.json())
+    .then((data) => showList(data));
+}
 
 function showList(products) {
   console.log(products);
   const markup = products
     .map(
-      (product) => `<div class="box">
+      (product) => `<div class="box ${product.discount > 0 ? "onSale" : ""} ${product.soldout ? "soldOut" : ""}">
           <div class="feature">
             <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="Produktbillede" class="productImage" />
             <p class="subtle">${product.brandname}</p>
@@ -22,7 +31,7 @@ function showList(products) {
             <div class="productDetails">
               <p class="productPrice">${product.price} DKK</p>
             </div>
-            <a href="produkt.html" class="buyButton">Se mere</a>
+         <a href="produkt.html?id=${product.id}" class="buyButton">Se mere</a>
           </div>
         </div>`
     )

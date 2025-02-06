@@ -12,3 +12,7 @@ function menuClick() {
   burger.classList.remove("active");
   nav.classList.remove("active");
 }
+const categoryLink = document.querySelector("a[href='produktliste.html']");
+if (categoryLink) {
+  categoryLink.setAttribute("href", "produktliste.html?category=all");
+}

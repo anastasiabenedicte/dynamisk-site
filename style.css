@@ -10,7 +10,14 @@ main {
 }
 body {
   background-color: white;
-  font-family:Verdana, Geneva, Tahoma, sans-serif
+  font-family: "Keania One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.forside{
+  background-image: url(images/background.svg);
+  background-size: cover;
+  
 }
 /*Style på h3 produkt side*/
 .product-info .productTitle {
@@ -24,6 +31,10 @@ body {
   font-size: 3rem;
   text-align: center; /* Centrerer teksten i h1 */
   padding: 4rem 0rem 3rem 0rem;
+  font-family: "Rubik Glitch", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: blue;
 }
 
 .productContainer {
@@ -67,13 +78,12 @@ body {
 .buyButton {
   display: block;
   padding: 0.7rem;
-  border: 2px solid #000;
-  background-color: #000;
-  color: #f7f2ea;
+  border: 1px solid #000;
+  background-color: transparent;
+  color: black;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  font-family: "Noto Sans Thai", sans-serif;
 }
 
 .buyButton:hover {
@@ -90,8 +100,6 @@ body {
   position: absolute;
   top: 10px;
   left: -10px;
-  background: #6d6c6c; /* Rød baggrund */
-  color: white;
   padding: 0.4rem 1rem;
   font-size: 1rem;
   font-weight: bold;
@@ -99,10 +107,9 @@ body {
   z-index: 3; /* Sørg for, at den er ovenpå billedet */
   max-width: 80px;
   text-align: center;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 .box.soldOut .productImage {
-  opacity: 0.7; /* Dæmp billedet */
+  opacity: 0.5; /* Dæmp billedet */
 }
 /* Sale badge */
 .sale-banner {
@@ -119,6 +126,19 @@ body {
   max-width: 80px;
   text-align: center;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.box.soldOut::after {
+  content: "Sold Out";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: blue;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 /* Strege original pris */
@@ -169,14 +189,13 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #457dae;
+  background-color: white;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   z-index: 10; /* Sørg for, at headeren er ovenpå */
 }
 
 .logo img {
-  width: 339px;
-  height: 57px;
+  height: 80px;
 }
 
 nav {
@@ -202,10 +221,14 @@ nav {
 .menu a {
   display: block;
   padding: 10px;
-  color: #f7f2ea;
+  color: black;
   text-decoration: none;
   transition: color 0.3s;
   text-align: end;
+}
+a.location {
+text-decoration:underline;
+color: blue;
 }
 
 .menu a:hover {
@@ -286,18 +309,16 @@ nav {
   justify-content: center; /* Centers text horizontally */
   align-items: center; /* Centers text vertically */
   width: 25rem;
-  height: 10rem;
-  background-color: rgb(232, 231, 231);
+  height: 18rem;
   text-align: center;
   margin: 10px;
   font-size: 1.5rem;
   text-decoration: none;
   color: black;
-  font-weight: bold;
 }
 
 .boxes:hover {
-  background-color: #457dae;
+  background-image: url(images/box\ hover.svg);
 }
 
 /* Product container with grid */
